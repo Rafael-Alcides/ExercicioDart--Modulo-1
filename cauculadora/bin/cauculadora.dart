@@ -1,78 +1,56 @@
 import 'package:cauculadora/cauculadora.dart' as cauculadora;
+  
+  
+  num numero1 = 5.3;
+  num numero2 = 4.25;
+  int operacao = 1;
 
-double numero1 = 3.7;
-double numero2 = 4.7;
-
-String operador = "adicao";
 
 void main(List<String> arguments) {
-  switch (operador) {
-    case "adicao":
-      operador = "+";
-      break;
-    case "multiplicacao":
-      operador = "*";
-      break;
-    case "divisao":
-      operador = "/";
-      break;
-    case "subtracao":
-      operador = "-";
-      break;
+  
+  
+  switch (operacao) {
+    case 1:
+      mostraResultado("O resultado de $numero1 + $numero2: ${somar(numero1, numero2).toStringAsPrecision(2)} ");
+    break;
+
+    case 2 :
+      mostraResultado("O resultado de $numero1 - $numero2: ${subtracao(numero1, numero2).toStringAsPrecision(2)}");
+    break;
+
+    case 3 :
+      mostraResultado("Oresultado de $numero1 * $numero2: ${multiplicacao(numero1, numero2).toStringAsPrecision(2)}");
+    break;
+
+    case 4 :
+      mostraResultado("O resultado de $numero1 / $numero2: ${divisao(numero1, numero2).toStringAsPrecision(2)}");    
+    break;
+
     default:
-      print("valor invalido");
+      mostraResultado("Operacao Invalida");
   }
-  functionEnd();
+
+  
 }
 
-void functionEnd() {
-  if (operador == "+") {
-    final summerEnd = functionSummer(numero1, numero2, operador);
-    print("O resultado de $numero1 $operador $numero2  : ${summerEnd.toStringAsFixed(2)}");
-  } else if (operador == "-") {
-    final minusEnd = functionMinus(numero1, numero2, operador);
-    print("O resultado de $numero1 $operador $numero2  : ${minusEnd..toStringAsFixed(2)}");
-  } else if (operador == "*") {
-    final multiplierEnd = functionMutiplier(numero1, numero2, operador);
-    print("O resultado de $numero1 $operador $numero2  : ${multiplierEnd.toStringAsFixed(2)}");
-  } else if (operador == "/") {
-    final dividerEnd = functionDivider(numero1, numero2, operador);
-    print("O resultado de $numero1 $operador $numero2  : ${dividerEnd.toStringAsFixed(2)}");
-  }
+void mostraResultado(String mensagem) {
+  print(mensagem);
 }
 
-double functionSummer(
-  double value1,
-  double value2,
-  String sinal,
-) {
-  final result = value1 + value2;
-  return result;
+num somar(num valor1, num valor2) {
+  return numero1 + numero2;
 }
 
-double functionMinus(
-  double value1,
-  double value2,
-  String sinal,
-) {
-  final result = value1 - value2;
-  return result;
+num subtracao(num valor1, num valor2) {
+  return numero1 - numero2;
 }
 
-double functionDivider(
-  double value1,
-  double value2,
-  String sinal,
-) {
-  final result = value1 / value2;
-  return result;
+num divisao(num valor1, num valor2) {
+  return numero1 / numero2;
 }
 
-double functionMutiplier(
-  double value1,
-  double value2,
-  String sinal,
-) {
-  final result = value1 * value2;
-  return result;
+num multiplicacao(num valor1, num valor2) {
+  return numero1 * numero2;
 }
+
+
