@@ -1,19 +1,23 @@
 import 'package:fibionacci/fibionacci.dart' as fibionacci;
 
-
-int atual = 1;
-int anterior = 1;
-int c = 0;
+String mostrarResultado = "";
 
 void main(List<String> arguments) {
-  fibi(10);
+  final num valorInformado = 10;
+
+sequenciaFibonacciRecursiva(0, 0, 1, valorInformado);
+
+  print("Sequencia de Fibonacci: $mostrarResultado");
+  
 }
 
-void fibi(int entrada) {
-  for (int i = 0; atual < entrada; i++) {
-    print(atual);
-    c = atual + anterior;
-    atual = anterior;
-    anterior = c;
+void sequenciaFibonacciRecursiva(anterior, atual, fibonacci, valorInformado) {
+  mostrarResultado += "$fibonacci ";
+  anterior = atual;
+  atual = fibonacci;
+  fibonacci = anterior + atual;
+
+  if (fibonacci <= valorInformado) {
+    sequenciaFibonacciRecursiva(anterior, atual, fibonacci, valorInformado);
   }
 }
